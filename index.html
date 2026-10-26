@@ -1,0 +1,1608 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Volvo AutoHub â€” Scandinavian Luxury Digital Showroom & Concierge</title>
+
+  <!-- Typography: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              surface: '#f8f9ff',
+              'surface-dim': '#cbdbf5',
+              'surface-low': '#eff4ff',
+              'surface-container': '#e5eeff',
+              'surface-high': '#dce9ff',
+              'on-surface': '#0b1c30',
+              'on-surface-variant': '#404751',
+              primary: '#005e9f',
+              'primary-container': '#0077c8',
+              'primary-hover': '#0284c7',
+              amber: '#e06a3b',
+              'amber-hover': '#c05225',
+              spruce: '#1b4332',
+              emerald: '#10b981',
+              outline: '#c0c7d3'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+  class="bg-brand-surface text-brand-on-surface font-sans antialiased selection:bg-brand-primary-container selection:text-white pb-20 md:pb-0">
+
+  <!-- ========================================== -->
+  <!-- 1. PUBLIC SHOWROOM SECTION                -->
+  <!-- ========================================== -->
+  <div id="public-view">
+
+    <!-- Top Global Announcement Strip -->
+    <div id="site-announce-strip"
+      class="bg-brand-surface-container border-b border-brand-outline/30 py-2 px-4 text-xs font-medium text-brand-primary flex items-center justify-between max-w-7xl mx-auto md:px-8">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-brand-primary-container animate-pulse"></span>
+        <span class="tracking-wide" data-site="announce_text">AUTOHUB INDONESIA â€¢ AUTHORIZED VOLVO CARS SHOWROOM</span>
+      </div>
+      <div class="hidden sm:flex items-center space-x-4 text-brand-on-surface-variant text-[11px]">
+        <span data-site="announce_badge">âš¡ 100% Electrified Portfolio</span>
+        <span data-site="announce_locations">JAKARTA SELATAN â€¢ CBD SURABAYA â€¢ BATAM HUB</span>
+      </div>
+    </div>
+
+    <!-- Sticky Main Navigation -->
+    <header id="site-main-nav" class="sticky top-0 z-30 bg-white/85 backdrop-blur-md border-b border-slate-200 transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <img id="brand-logo" alt="Logo brand" class="hidden w-auto max-w-[200px] object-contain h-9 md:h-11">
+          <span id="brand-name-text"
+            class="font-display font-extrabold text-2xl md:text-3xl tracking-tight text-brand-on-surface uppercase" data-site="brand_name">VOLVO</span>
+          <span
+            class="text-xs uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-500 border border-slate-200" data-site="brand_badge">AUTOHUB</span>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-on-surface-variant">
+          <div id="site-nav-menu" class="flex items-center space-x-8"></div>
+          <button onclick="openAdminModal()" id="admin-entry-nav" class="hover:text-brand-primary transition-colors"><span data-site="nav_crm" id="admin-label-in">Executive CRM Portal</span><span id="admin-label-out" class="hidden">Login Admin</span></button>
+        </nav>
+
+        <!-- Right Header Actions -->
+        <div class="flex items-center space-x-3">
+          <button onclick="openAdminModal()" id="admin-entry-desk" class="hidden flex items-center space-x-2 p-1.5 rounded-full hover:bg-slate-100 transition-colors"
+            class="flex items-center space-x-2 p-1.5 rounded-full hover:bg-slate-100 transition-colors"
+            title="Nordic Desk Executive">
+            <div
+              class="w-8 h-8 rounded-full bg-brand-on-surface text-white flex items-center justify-center text-xs font-semibold">
+              <i data-lucide="user" class="w-4 h-4"></i>
+            </div>
+            <span class="hidden xl:inline-block text-xs font-semibold text-brand-on-surface"><span data-site="nav_desk_title">Nordic Desk</span><br><span
+                class="text-[10px] text-slate-400 font-normal" data-site="nav_desk_sub">EXECUTIVE</span></span>
+          </button>
+          <button onclick="openBookingModal()"
+            class="inline-flex items-center space-x-2 bg-brand-amber hover:bg-brand-amber-hover text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-lg shadow-sm transition-all active:scale-95">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span data-site="nav_cta">Booking Test Drive</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cinematic Video Section (tepat di bawah navigasi, konten diatur dari Panel Admin) -->
+    <section id="cinematic-video" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-12">
+      <div id="video-shell" class="relative w-full overflow-hidden rounded-2xl bg-[#0b1c30] shadow-xl">
+        <div class="relative w-full aspect-video">
+          <img id="video-poster" alt="Volvo Cinematic Showcase" class="absolute inset-0 w-full h-full object-cover">
+          <div id="video-media" class="absolute inset-0"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5 pointer-events-none"></div>
+          <div class="absolute inset-x-0 bottom-0 p-5 sm:p-8 lg:p-10">
+            <span
+              class="inline-flex items-center space-x-2 px-2.5 py-1 rounded-full bg-white/15 backdrop-blur border border-white/25 text-[10px] font-semibold text-white uppercase tracking-widest mb-3">
+              <i data-lucide="video" class="w-3 h-3"></i>
+              <span>Cinematic Showcase</span>
+            </span>
+            <h2 data-site="video_title"
+              class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight drop-shadow-lg">
+            </h2>
+            <p data-site="video_subtitle"
+              class="text-xs sm:text-sm lg:text-base text-slate-200 mt-2 max-w-2xl drop-shadow"></p>
+            <button type="button" onclick="openBookingModal()"
+              class="mt-4 inline-flex items-center space-x-2 bg-brand-amber hover:bg-brand-amber-hover text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-lg shadow-md transition-all active:scale-95">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span data-site="video_cta_text">Booking Test Drive</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Showcase Section (Warm Minimalism) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Hero Left Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <div
+            class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-brand-primary">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+            <span data-site="hero_eyebrow">SCANDINAVIAN ELECTRIFICATION</span>
+          </div>
+          <h1
+            class="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-brand-on-surface leading-[1.12]">
+            <span data-site="hero_title">Kemewahan Berkelanjutan.</span> <br><span class="text-brand-primary-container" data-site="hero_title_accent">100% Elektrik.</span>
+          </h1>
+          <p class="text-sm sm:text-base text-brand-on-surface-variant leading-relaxed" data-site="hero_subtitle">
+            The All-New Volvo EX30 & XC40 Recharge â€” Didesain dengan standar keselamatan tertinggi, ketenangan akustik
+            Skandinavia, dan nol emisi langsung.
+          </p>
+
+          <!-- Hero CTAs -->
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <button onclick="openBookingModal('Volvo EX30')"
+              class="inline-flex items-center justify-center space-x-2.5 bg-brand-amber hover:bg-brand-amber-hover text-white font-semibold text-sm px-6 py-3.5 rounded-lg shadow-sm transition-all active:scale-95">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span data-site="hero_cta_primary">Booking Test Drive</span>
+            </button>
+            <button type="button" onclick="playCinematicVideo()"
+              class="inline-flex items-center justify-center space-x-2 bg-white border border-slate-200 hover:bg-slate-50 text-brand-on-surface font-semibold text-sm px-5 py-3.5 rounded-lg transition-all">
+              <i data-lucide="play-circle" class="w-4 h-4 text-brand-primary-container"></i>
+              <span data-site="hero_cta_secondary">Tonton Video Sinematik</span>
+            </button>
+          </div>
+
+          <!-- Hero Metrics Telemetry -->
+          <div class="grid grid-cols-3 gap-3 pt-4 border-t border-slate-200">
+            <div class="bg-white p-3 rounded-lg border border-slate-200/80 shadow-sm text-center">
+              <span class="block font-display text-2xl font-bold text-brand-on-surface font-mono" data-site="hero_m1_value">3.6s</span>
+              <span class="text-xs text-slate-500 font-medium" data-site="hero_m1_label">0-100 km/jam</span>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200/80 shadow-sm text-center">
+              <span class="block font-display text-2xl font-bold text-brand-on-surface font-mono" data-site="hero_m2_value">476 km</span>
+              <span class="text-xs text-slate-500 font-medium" data-site="hero_m2_label">Jarak WLTP</span>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200/80 shadow-sm text-center">
+              <span class="block font-display text-2xl font-bold text-brand-emerald" data-site="hero_m3_value">5-Star</span>
+              <span class="text-xs text-slate-500 font-medium" data-site="hero_m3_label">Euro NCAP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right Column (Featured Staging) -->
+        <div class="lg:col-span-7">
+          <div
+            class="relative bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-xl overflow-hidden group">
+            <div class="absolute top-5 left-6 flex items-center space-x-2">
+              <span
+                class="px-3 py-1 rounded-full bg-brand-spruce/10 text-brand-spruce text-xs font-semibold border border-brand-spruce/20" data-site="hero_card_badge">Showcase Unggulan</span>
+              <span class="text-xs font-mono text-slate-400" data-site="hero_card_year">Model 2025</span>
+            </div>
+            <div class="absolute top-5 right-6">
+              <button onclick="openVisualizerById('VOLVO-EX30-01')"
+                class="text-xs font-semibold px-3 py-1.5 rounded-md bg-blue-50 text-brand-primary hover:bg-blue-100 transition-colors inline-flex items-center space-x-1.5">
+                <span data-site="hero_card_cta">Studio Staging</span>
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <!-- Car Cutout Image -->
+            <div class="py-6 sm:py-12 flex justify-center items-center">
+              <img id="hero-feature-img" data-site-img="hero_card_image"
+                src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=80"
+                alt="Volvo EX30"
+                class="w-full max-w-lg object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-xl">
+            </div>
+            <!-- Bottom Tag info -->
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between pt-4 border-t border-slate-100 text-sm">
+              <div>
+                <h3 class="font-display font-bold text-lg text-brand-on-surface" data-site="hero_card_model">Volvo EX30 Ultra</h3>
+                <p class="text-xs text-slate-500" data-site="hero_card_color">Warna Tampil: Cloud Blue Metallic</p>
+              </div>
+              <div class="mt-2 sm:mt-0 text-left sm:text-right">
+                <span class="text-xs text-slate-400 block" data-site="hero_card_price_label">Harga OTR Jakarta & Batam</span>
+                <span class="font-mono font-bold text-lg text-brand-primary-container" data-site="hero_card_price">Rp 1.160.000.000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model Lineup Section -->
+    <section id="lineup" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 space-y-4 md:space-y-0">
+        <div>
+          <span class="text-xs font-semibold text-brand-primary tracking-widest uppercase" data-site="lineup_eyebrow">Pure Electric Lineup 2025</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-on-surface mt-1" data-site="lineup_title">Pilihan Model Eksklusif</h2>
+        </div>
+        <!-- Powertrain Filter Pills -->
+        <div
+          class="inline-flex p-1 rounded-lg bg-slate-200/80 border border-slate-300/60 self-start md:self-auto overflow-x-auto max-w-full">
+          <button onclick="filterCars('all')" id="filter-all"
+            class="filter-tab px-4 py-2 rounded-md text-xs font-semibold transition-all bg-white text-brand-on-surface shadow-sm" data-site="lineup_filter_all">Semua Model</button>
+          <button onclick="filterCars('Pure Electric')" id="filter-electric"
+            class="filter-tab px-4 py-2 rounded-md text-xs font-semibold transition-all text-slate-500 hover:text-brand-on-surface" data-site="lineup_filter_electric">Pure Electric</button>
+          <button onclick="filterCars('Plug-in Hybrid')" id="filter-hybrid"
+            class="filter-tab px-4 py-2 rounded-md text-xs font-semibold transition-all text-slate-500 hover:text-brand-on-surface" data-site="lineup_filter_hybrid">Plug-in Hybrid</button>
+        </div>
+      </div>
+
+      <!-- Car Grid -->
+      <div id="cars-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Rendered dynamically by Javascript.html -->
+      </div>
+    </section>
+
+    <!-- Philosophy & Safety Highlights Section -->
+    <section id="safety"
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200 bg-brand-surface-low rounded-3xl my-10">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-semibold text-brand-primary tracking-widest uppercase" data-site="safety_eyebrow">Prinsip Esensial</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-on-surface mt-1" data-site="safety_title">Filosofi Keselamatan Volvo</h2>
+        <p class="text-sm sm:text-base text-brand-on-surface-variant mt-3" data-site="safety_subtitle">
+          Sejak menciptakan sabuk pengaman tiga titik pada tahun 1959, visi kami tidak pernah bergeser: melindungi
+          setiap jiwa manusia di dalam dan di sekitar kendaraan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-blue-50 text-brand-primary flex items-center justify-center">
+            <i data-lucide="shield-alert" data-site-icon="safety_1_icon" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-brand-on-surface" data-site="safety_1_title">Deteksi LiDAR & Safe Space Tech</h3>
+          <p class="text-sm text-brand-on-surface-variant leading-relaxed" data-site="safety_1_desc">
+            Sistem sensor atap canggih memindai objek hingga 250 meter di depan dalam kegelapan total, memberi waktu
+            antisipasi kritis saat berkendara di jalan tol dan perkotaan.
+          </p>
+          <span class="text-xs font-semibold text-brand-primary flex items-center space-x-1">
+            <span data-site="safety_1_foot">Standar Generasi Masa Depan</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </span>
+        </div>
+
+        <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-emerald-50 text-brand-emerald flex items-center justify-center">
+            <i data-lucide="wind" data-site-icon="safety_2_icon" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-brand-on-surface" data-site="safety_2_title">CleanZoneÂ® Filtrasi Udara PM 2.5</h3>
+          <p class="text-sm text-brand-on-surface-variant leading-relaxed" data-site="safety_2_desc">
+            Menyaring hingga 95% partikel berbahaya PM 2.5 sebelum memasuki kabin. Menjamin udara di dalam mobil sesegar
+            kawasan hutan pinus Swedia Utara.
+          </p>
+          <span class="text-xs font-semibold text-brand-emerald flex items-center space-x-1">
+            <span data-site="safety_2_foot">Kualitas Udara Kabin 99.8%</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </span>
+        </div>
+
+        <div class="bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-sm space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-amber-50 text-brand-amber flex items-center justify-center">
+            <i data-lucide="recycle" data-site-icon="safety_3_icon" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-brand-on-surface" data-site="safety_3_title">100% Material Daur Ulang Mewah</h3>
+          <p class="text-sm text-brand-on-surface-variant leading-relaxed" data-site="safety_3_desc">
+            Sentuhan kain rajut Nordico berbasis poliester daur ulang botol PET, serat wol bersertifikasi, dan panel
+            dekoratif dari serbuk kayu daur ulang Skandinavia.
+          </p>
+          <span class="text-xs font-semibold text-brand-amber flex items-center space-x-1">
+            <span data-site="safety_3_foot">Jejak Karbon Rendah 19t COâ‚‚</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Door-to-Door Experience Banner (screen.jpg) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <div
+        class="bg-[#0b1c30] text-white rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden shadow-xl">
+        <div class="space-y-2 z-10">
+          <span class="text-[11px] font-semibold text-blue-300 uppercase tracking-widest" data-site="cta_eyebrow">Door-to-Door Experience</span>
+          <h3 class="font-display font-bold text-2xl sm:text-3xl text-white" data-site="cta_title">Rasakan Heningnya Akselerasi Elektrik Volvo</h3>
+          <p class="text-sm text-slate-300 max-w-xl" data-site="cta_subtitle">
+            Spesialis kendaraan listrik kami siap mengantarkan unit uji coba langsung ke kediaman atau kantor eksekutif
+            Anda di area Jabodetabek, Surabaya, dan Batam.
+          </p>
+        </div>
+        <button onclick="openBookingModal()"
+          class="z-10 inline-flex items-center space-x-2 bg-brand-amber hover:bg-brand-amber-hover text-white text-sm font-semibold px-6 py-3.5 rounded-lg shadow-md transition-all active:scale-95 shrink-0">
+          <span data-site="cta_button">Reservasi Test Drive Sekarang âž”</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer Showroom -->
+    <footer id="retailer" class="bg-white border-t border-slate-200 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="space-y-3">
+            <span class="font-display font-bold text-xl text-brand-on-surface" data-site="footer_brand">AUTOHUB VOLVO</span>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              <span data-site="footer_company">PT Autohub Mobilitas Swedia</span><br>
+              <span data-site="footer_address">Jl. TB Simatupang No. 18, Cilandak, Jakarta Selatan 12430</span><br>
+              <span data-site="footer_legal">DEALER RESMI VOLVO CARS ID</span>
+            </p>
+          </div>
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-on-surface" data-site="footer_hours_title">Jam Operasional Showroom</span>
+            <p class="text-xs text-brand-on-surface-variant" data-site="footer_hours_1">Senin â€” Jumat: 08.30 â€“ 19.00 WIB</p>
+            <p class="text-xs text-brand-on-surface-variant" data-site="footer_hours_2">Sabtu: 09.00 â€“ 18.00 WIB</p>
+            <p class="text-xs text-brand-on-surface-variant" data-site="footer_hours_3">Minggu & Libur: 10.00 â€“ 16.00 WIB</p>
+            <span class="inline-block text-[11px] text-brand-emerald font-semibold" data-site="footer_hours_badge">â— Showroom Buka Hari Ini</span>
+          </div>
+          <div class="space-y-2">
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-on-surface" data-site="footer_contact_title">Direct Concierge Hotline</span>
+            <p class="text-xs text-brand-on-surface-variant font-mono font-bold" data-site="footer_phone">ðŸ“ž (021) 7590-8888</p>
+            <p class="text-xs text-brand-on-surface-variant font-mono" data-site="footer_wa">ðŸ“± +62 812-8000-8888 (WhatsApp VIP)</p>
+            <p class="text-xs text-slate-500" data-site="footer_email">concierge@autohub.volvo.id</p>
+          </div>
+          <div class="space-y-3">
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-on-surface" data-site="footer_internal_title">Internal Enterprise Access</span>
+            <p class="text-xs text-slate-500" data-site="footer_internal_desc">Akses sistem armada, alokasi kuota unit CRM, dan database prospek
+              eksekutif.</p>
+            <button onclick="openAdminModal()" id="admin-entry-footer"
+              class="inline-flex w-full items-center justify-center space-x-2 text-xs font-semibold px-3.5 py-2.5 rounded-lg bg-blue-50 text-brand-primary hover:bg-blue-100 transition-colors">
+              <i data-lucide="shield" class="w-4 h-4 text-brand-primary"></i>
+              <span data-site="footer_internal_btn" id="admin-label-in-footer">Portal CRM Executive âž”</span>
+              <span id="admin-label-out-footer" class="hidden">Login Admin âž”</span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="mt-8 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <div class="flex items-center space-x-2">
+            <span class="font-bold tracking-wider text-brand-on-surface">VOLVO</span>
+            <span data-site="footer_tagline">Scandinavian Luxury Mobility & Fleet Intelligence</span>
+          </div>
+          <div class="flex space-x-6 text-[11px]">
+            <a href="#lineup" class="hover:underline" data-site="footer_link_1">Electrification Spec</a>
+            <button onclick="openVisualizerById('VOLVO-EX30-01')" class="hover:underline" data-site="footer_link_2">Bespoke Configurator</button>
+            <button onclick="openAdminModal()" id="admin-entry-footer-link" class="hidden hover:underline"><span data-site="footer_link_3">Enterprise Telemetry</span></button>
+          </div>
+          <span class="text-[11px]" data-site="footer_copyright">Â© 2026 Volvo Car Corporation. v4.8.2 Nordic Edition</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Persistent Bottom Dock (screen.png & screenss.png) -->
+    <div
+      class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 z-40 flex md:hidden items-center gap-2 shadow-lg">
+      <a id="btn-mobile-dock-wa" href="https://wa.me/6281234567890" target="_blank"
+        class="w-12 h-12 rounded-lg border border-slate-200 bg-white flex items-center justify-center text-slate-700 shadow-sm active:scale-95">
+        <i data-lucide="message-square" class="w-5 h-5 text-emerald-600"></i>
+      </a>
+      <button onclick="openBookingModal()"
+        class="flex-1 h-12 bg-brand-amber hover:bg-brand-amber-hover text-white font-semibold text-sm rounded-lg flex items-center justify-center space-x-2 shadow-sm active:scale-95">
+        <i data-lucide="calendar" class="w-4 h-4"></i>
+        <span data-site="dock_booking">Book Test Drive</span>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 2. STUDIO VISUALIZER MODAL (screen_2.jpg)  -->
+  <!-- ========================================== -->
+  <div id="visualizer-modal"
+    class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
+    <div
+      class="bg-white rounded-2xl w-full max-w-6xl shadow-2xl border border-slate-200 overflow-hidden my-auto max-h-[96vh] flex flex-col">
+      <!-- Modal Top Header Bar -->
+      <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-white">
+        <div class="flex items-center space-x-3">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">PURE ELECTRIC PLATFORM â€¢
+                SEA ARCHITECTURE</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-brand-primary">Ultra Twin
+                Motor</span>
+            </div>
+            <div class="flex items-baseline space-x-3 mt-0.5">
+              <h3 id="vis-model-title" class="font-display font-bold text-2xl text-brand-on-surface">Volvo EX30</h3>
+              <span class="text-xs text-brand-primary font-medium cursor-pointer">Studio Eksplorasi</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center space-x-6">
+          <div class="text-right">
+            <span class="text-[11px] text-slate-400 block font-medium uppercase tracking-wider">HARGA OTR JAKARTA</span>
+            <span id="vis-price-display" class="font-mono font-bold text-xl text-brand-on-surface">Rp
+              1.160.000.000</span>
+          </div>
+          <button onclick="closeVisualizerModal()"
+            class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-colors">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pemilih Unit: pindah mobil tanpa menutup Studio Visualizer -->
+      <div id="vis-car-picker-wrap" class="px-6 py-3 bg-white border-b border-slate-100">
+        <button type="button" id="vis-picker-toggle" onclick="toggleVisCarPicker()"
+          class="w-full flex items-center justify-between">
+          <span class="flex items-center space-x-2 min-w-0">
+            <i data-lucide="car" class="w-3.5 h-3.5 text-brand-primary shrink-0"></i>
+            <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider shrink-0">Pilih Unit Volvo</span>
+            <span id="vis-picker-summary" class="hidden text-[11px] font-bold text-brand-on-surface truncate"></span>
+          </span>
+          <span class="flex items-center space-x-2 shrink-0">
+            <span id="vis-car-count" class="text-[11px] text-slate-400"></span>
+            <i id="vis-picker-chevron" data-lucide="chevron-up"
+              class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+          </span>
+        </button>
+        <div id="vis-car-picker" class="flex items-center gap-2 overflow-x-auto pb-1 mt-2"></div>
+      </div>
+
+      <!-- Segmented Navigation Tabs -->
+      <div class="px-6 bg-slate-50 border-b border-slate-200 flex space-x-8 text-xs font-semibold">
+        <button onclick="switchVisualizerTab('exterior')" id="tab-btn-exterior"
+          class="py-3 border-b-2 border-brand-primary text-brand-primary flex items-center space-x-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
+          <span>1. Eksterior</span>
+        </button>
+        <button onclick="switchVisualizerTab('interior')" id="tab-btn-interior"
+          class="py-3 border-b-2 border-transparent text-slate-500 hover:text-brand-on-surface">2. Interior
+          Kabin</button>
+        <button onclick="switchVisualizerTab('features')" id="tab-btn-features"
+          class="py-3 border-b-2 border-transparent text-slate-500 hover:text-brand-on-surface">3. Fitur
+          Keselamatan</button>
+        <button onclick="switchVisualizerTab('video')" id="tab-btn-video"
+          class="py-3 border-b-2 border-transparent text-slate-500 hover:text-brand-on-surface">4. Video Ulasan
+          360Â°</button>
+      </div>
+
+      <!-- Modal Body (Two-Column Staging Layout) -->
+      <div class="p-6 overflow-y-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- Left Staging Area (7 Cols) -->
+        <div class="lg:col-span-7 space-y-4">
+          <!-- 360 Viewport Container -->
+          <div
+            class="relative bg-slate-50 rounded-xl p-6 sm:p-10 flex flex-col items-center justify-center min-h-[320px] sm:min-h-[420px] border border-slate-200 overflow-hidden">
+            <div class="absolute top-4 left-4 flex items-center space-x-2 text-xs font-semibold text-slate-600">
+              <i data-lucide="rotate-cw" class="w-4 h-4 text-brand-primary"></i>
+              <span>Rotasi 360Â° Aktif</span>
+            </div>
+            <div class="absolute top-4 right-4 flex items-center space-x-1">
+              <button
+                class="w-7 h-7 rounded bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100"><i
+                  data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i></button>
+              <button
+                class="w-7 h-7 rounded bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100"><i
+                  data-lucide="rotate-cw" class="w-3.5 h-3.5"></i></button>
+              <button
+                class="w-7 h-7 rounded bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100"><i
+                  data-lucide="search" class="w-3.5 h-3.5"></i></button>
+            </div>
+
+            <!-- TAB 1: EXTERIOR -->
+            <div id="vis-tab-exterior" class="w-full flex justify-center">
+              <img id="vis-car-image" src="" alt="Volvo Exterior"
+                class="w-full max-w-lg object-contain transition-opacity duration-300 drop-shadow-2xl">
+            </div>
+
+            <!-- TAB 2: INTERIOR -->
+            <div id="vis-tab-interior" class="hidden w-full space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="vis-interior-gallery"></div>
+            </div>
+
+            <!-- TAB 3: FEATURES -->
+            <div id="vis-tab-features" class="hidden w-full space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="vis-features-list"></div>
+            </div>
+
+            <!-- TAB 4: VIDEO -->
+            <div id="vis-tab-video" class="hidden w-full aspect-video rounded-lg overflow-hidden bg-black shadow-lg">
+              <iframe id="vis-video-frame" class="w-full h-full" src="" title="Volvo Video Player" frameborder="0"
+                allowfullscreen></iframe>
+            </div>
+
+            <span class="absolute bottom-3 text-[11px] text-slate-400">ðŸ‘† Geser perlahan untuk memutar sudut
+              pandang</span>
+          </div>
+
+          <!-- Color Swatches & Wheel Controls -->
+          <div class="space-y-4 p-4 rounded-xl border border-slate-200 bg-white">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-slate-400 block font-semibold uppercase tracking-wider">WARNA
+                  EKSTERIOR</span>
+                <span id="vis-selected-color-name" class="font-bold text-sm text-brand-on-surface">Cloud Blue
+                  Metallic</span>
+              </div>
+              <div id="vis-color-swatches" class="flex items-center space-x-3"></div>
+            </div>
+
+            <!-- Aero Wheel Options -->
+            <div class="pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <span class="text-[11px] text-slate-400 block font-semibold uppercase tracking-wider">PILIHAN VELG
+                  AERO</span>
+                <span class="text-xs font-semibold text-brand-on-surface">Profil Aerodinamis Tinggi</span>
+              </div>
+              <div class="flex space-x-2">
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-brand-primary bg-blue-50/60 text-brand-primary text-xs font-semibold">19"
+                  5-Spoke Aero (Standar)</button>
+                <button
+                  class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs font-medium">20"
+                  5-Spoke Diamond Cut</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Telemetry & Spec Summary (5 Cols) -->
+        <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
+          <div class="space-y-4">
+            <!-- Telemetry Spec Matrix -->
+            <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-primary">SPESIFIKASI TEKNIS</span>
+                <span class="text-xs text-slate-400 font-mono">Model Year 2025</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 pt-1">
+                <div class="p-3 bg-slate-50 rounded-lg">
+                  <span class="text-[11px] text-slate-400 block">Tenaga Puncak</span>
+                  <span class="font-display font-bold text-lg text-brand-on-surface font-mono">428 <span
+                      class="text-xs font-normal">hp</span></span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-lg">
+                  <span class="text-[11px] text-slate-400 block">Torsi Maksimal</span>
+                  <span class="font-display font-bold text-lg text-brand-on-surface font-mono">543 <span
+                      class="text-xs font-normal">Nm</span></span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-lg">
+                  <span class="text-[11px] text-slate-400 block">Baterai NMC</span>
+                  <span id="vis-spec-battery" class="font-display font-bold text-lg text-brand-on-surface font-mono">69
+                    kWh</span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-lg">
+                  <span class="text-[11px] text-slate-400 block">Fast Charge DC</span>
+                  <span id="vis-spec-charging" class="font-display font-bold text-lg text-brand-on-surface font-mono">26
+                    mnt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cabin Highlights -->
+            <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2 text-xs">
+              <span class="font-bold text-brand-on-surface block uppercase tracking-wider text-[11px]">KEUNGGULAN
+                KABIN</span>
+              <div class="space-y-2">
+                <div class="flex items-start space-x-2">
+                  <i data-lucide="layers" class="w-4 h-4 text-brand-primary shrink-0 mt-0.5"></i>
+                  <p><strong class="text-brand-on-surface">Flax Nordico Upholstery:</strong> Bahan ramah lingkungan
+                    turunan rami alami Skandinavia.</p>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <i data-lucide="volume-2" class="w-4 h-4 text-brand-primary shrink-0 mt-0.5"></i>
+                  <p><strong class="text-brand-on-surface">Harman Kardon Soundbar:</strong> Desain soundbar tunggal
+                    terintegrasi melintang dashboard.</p>
+                </div>
+                <div class="flex items-start space-x-2">
+                  <i data-lucide="smartphone" class="w-4 h-4 text-brand-primary shrink-0 mt-0.5"></i>
+                  <p><strong class="text-brand-on-surface">12.3" Google Built-in Display:</strong> Navigasi Google Maps
+                    & Play Store nirkabel.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Safe Space Alert -->
+            <div class="p-3 rounded-lg bg-blue-50/70 border border-blue-200 flex items-center justify-between text-xs">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-brand-primary"></i>
+                <span class="font-semibold text-brand-primary">Safe Space Technologyâ„¢</span>
+              </div>
+              <span class="font-mono text-slate-500 font-medium">0-100 KM/J: 3.6 DTK</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="space-y-2 pt-2">
+            <div class="grid grid-cols-2 gap-2">
+              <a id="vis-brochure-link" href="#" target="_blank"
+                class="h-11 border border-slate-300 rounded-lg flex items-center justify-center space-x-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>Unduh Brosur PDF</span>
+              </a>
+              <button onclick="bookCurrentVisualizerUnit()"
+                class="h-11 bg-brand-amber hover:bg-brand-amber-hover text-white rounded-lg flex items-center justify-center space-x-1.5 text-xs font-semibold shadow-sm transition-all active:scale-95">
+                <span>Jadwalkan Test Drive âž”</span>
+              </button>
+            </div>
+            <div class="flex items-center justify-between text-[11px] text-slate-400 pt-1">
+              <span>â— Unit Siap Alokasi Q2 2026</span>
+              <span>Garansi Baterai 8 Tahun / 160.000 km</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 3. BOOKING TEST DRIVE MODAL (screen_4.jpg) -->
+  <!-- ========================================== -->
+  <div id="booking-modal"
+    class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div
+      class="bg-white rounded-2xl w-full max-w-lg shadow-2xl border border-slate-200 overflow-hidden my-auto max-h-[96vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-white">
+        <div>
+          <span
+            class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-blue-50 text-brand-primary uppercase tracking-wider" data-site="booking_badge">â— VOLVO VIP EXPERIENCE</span>
+          <h3 class="font-display font-bold text-xl text-brand-on-surface mt-1" data-site="booking_title">Jadwalkan Uji Kendara Volvo</h3>
+          <p class="text-xs text-slate-500" data-site="booking_subtitle">Rasakan performa dan standar keselamatan kelas dunia secara langsung di
+            showroom atau kediaman Anda.</p>
+        </div>
+        <button onclick="closeBookingModal()"
+          class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition-colors">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Booking Form -->
+      <form id="lead-form" onsubmit="handleLeadSubmit(event)" class="p-6 overflow-y-auto flex-1 space-y-4">
+        <!-- Pilihan Unit Model Kendaraan (Horizontal Cards) -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-brand-on-surface">Pilihan Unit Model
+              *</label>
+            <span class="text-[11px] text-brand-primary font-medium">PURE ELECTRIC & HYBRID</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2" id="booking-unit-selector">
+            <!-- Dynamic Unit Selectors (EX30, XC40, XC90) -->
+          </div>
+        </div>
+
+        <!-- Format Penyerahan Test Drive -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-brand-on-surface mb-2">Format
+            Penyelenggaraan</label>
+          <div class="grid grid-cols-2 gap-2 bg-slate-100 p-1 rounded-lg">
+            <label
+              class="flex items-center justify-center space-x-2 py-2 px-3 rounded-md cursor-pointer transition-all bg-white shadow-sm text-brand-primary font-semibold text-xs"
+              id="label-format-flagship">
+              <input type="radio" name="formatDelivery" value="Showroom Flagship" checked
+                onchange="updateFormatToggle(this)" class="hidden">
+              <i data-lucide="building" class="w-3.5 h-3.5"></i>
+              <span>Showroom Flagship</span>
+            </label>
+            <label
+              class="flex items-center justify-center space-x-2 py-2 px-3 rounded-md cursor-pointer transition-all text-slate-600 hover:text-brand-on-surface font-medium text-xs"
+              id="label-format-home">
+              <input type="radio" name="formatDelivery" value="Home Delivery" onchange="updateFormatToggle(this)"
+                class="hidden">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              <span>Home Test Drive</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Nama Lengkap -->
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label for="lead-name" class="block text-xs font-semibold text-brand-on-surface">Nama Lengkap *</label>
+            <span class="text-[10px] text-slate-400">SESUAI KTP/SIM</span>
+          </div>
+          <div class="relative">
+            <i data-lucide="user" class="w-4 h-4 absolute left-3 top-3 text-slate-400"></i>
+            <input type="text" id="lead-name" required placeholder="contoh: Hendra Wijaya"
+              class="w-full h-10 pl-9 pr-3 rounded-lg border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-brand-primary">
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label for="lead-wa" class="block text-xs font-semibold text-brand-on-surface">Nomor WhatsApp *</label>
+            <span class="text-[10px] text-brand-primary font-semibold flex items-center space-x-1">
+              <i data-lucide="zap" class="w-3 h-3"></i>
+              <span>Prioritas Respon Cepat</span>
+            </span>
+          </div>
+          <div class="flex">
+            <span
+              class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-slate-300 bg-slate-100 text-xs font-semibold text-slate-700">ðŸ‡®ðŸ‡©
+              +62</span>
+            <input type="tel" id="lead-wa" required placeholder="812 3456 7890"
+              class="w-full h-10 px-3 rounded-r-lg border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-brand-primary">
+          </div>
+          <span class="text-[11px] text-slate-400 mt-1 block">Konfirmasi otomatis via WhatsApp resmi Volvo Cars
+            ID.</span>
+        </div>
+
+        <!-- Domisili / Kota Showroom -->
+        <div>
+          <label for="lead-city" class="block text-xs font-semibold text-brand-on-surface mb-1">Domisili / Kota Layanan
+            *</label>
+          <select id="lead-city" required
+            class="w-full h-10 px-3 rounded-lg border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white">
+            <option value="Batam / Kepulauan Riau (Showroom Baloi & Home Concierge)">Batam / Kepulauan Riau (Showroom
+              Baloi & Home Concierge)</option>
+            <option value="Jakarta Selatan (Volvo Studio Senayan Park)">Jakarta Selatan (Volvo Studio Senayan Park)
+            </option>
+            <option value="Surabaya (CBD Showroom)">Surabaya (CBD Showroom)</option>
+          </select>
+        </div>
+
+        <!-- Rencana Tanggal & Slot Waktu -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="lead-date" class="block text-xs font-semibold text-brand-on-surface mb-1">Rencana Tanggal
+              *</label>
+            <input type="date" id="lead-date" required
+              class="w-full h-10 px-3 rounded-lg border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-brand-primary">
+          </div>
+          <div>
+            <label for="lead-slot" class="block text-xs font-semibold text-brand-on-surface mb-1">Pilihan Slot Waktu
+              *</label>
+            <select id="lead-slot" required
+              class="w-full h-10 px-3 rounded-lg border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-brand-primary bg-white">
+              <option value="Pagi (09:30 - 11:30 WIB)">Pagi (09:30 - 11:30 WIB)</option>
+              <option value="Siang (13:30 - 15:30 WIB)" selected>Siang (13:30 - 15:30 WIB) - Populer</option>
+              <option value="Sore (16:00 - 17:30 WIB)">Sore (16:00 - 17:30 WIB)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Catatan Khusus -->
+        <div>
+          <label for="lead-notes" class="block text-xs font-semibold text-brand-on-surface mb-1">Catatan Khusus /
+            Preferensi Rute</label>
+          <textarea id="lead-notes" rows="2"
+            placeholder="contoh: Mohon persiapan fitur Pilot Assist dan demonstrasi audio Harman Kardon..."
+            class="w-full p-2.5 rounded-lg border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-brand-primary"></textarea>
+        </div>
+
+        <!-- Quota Information Strip (screen_4.jpg) -->
+        <div class="p-2.5 rounded-lg bg-blue-50/60 border border-blue-200/60 flex items-center justify-between text-xs">
+          <div class="flex items-center space-x-2">
+            <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+            <span class="text-brand-on-surface font-medium">UNIT DEMO: CLOUD BLUE READY</span>
+          </div>
+          <span class="text-brand-primary font-semibold">Slot Tersedia: 4 Kuota Hari Ini</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="btn-submit-lead"
+          class="w-full h-11 bg-brand-amber hover:bg-brand-amber-hover text-white font-semibold text-xs rounded-lg flex items-center justify-center space-x-2 transition-all shadow-md active:scale-95">
+          <span>Konfirmasi Pengajuan Jadwal âž”</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 4. MODERN EXECUTIVE CRM PORTAL            -->
+  <!-- ========================================== -->
+  <div id="admin-view" class="hidden min-h-screen bg-brand-surface flex">
+
+    <!-- Executive Desktop Sidebar (screen_3.jpg) -->
+    <aside class="hidden lg:flex w-64 bg-white border-r border-slate-200 flex-col justify-between py-6 px-4">
+      <div class="space-y-6">
+        <!-- Logo & Hub -->
+        <div class="px-2">
+          <span class="font-display font-extrabold text-lg text-brand-on-surface block tracking-tight">EXECUTIVE</span>
+          <span class="text-[10px] text-slate-400 font-semibold tracking-widest uppercase">CRM FLEET HUB</span>
+        </div>
+
+        <!-- Navigation Group -->
+        <div class="space-y-1 text-xs">
+          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider px-2 block mb-2">DIRECT
+            NAVIGATION</span>
+          <button type="button" onclick="switchAdminSection('overview')" id="admin-nav-overview"
+            class="admin-nav-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg bg-blue-50 text-brand-primary font-semibold text-left">
+            <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+            <span>Overview & KPI</span>
+          </button>
+          <button type="button" onclick="switchAdminSection('pipeline')" id="admin-nav-pipeline"
+            class="admin-nav-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 font-medium text-left">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Sales Pipeline</span>
+          </button>
+          <button type="button" onclick="switchAdminSection('inventory')" id="admin-nav-inventory"
+            class="admin-nav-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 font-medium text-left">
+            <i data-lucide="truck" class="w-4 h-4"></i>
+            <span>Fleet Inventory</span>
+          </button>
+          <button type="button" onclick="switchAdminSection('quotes')" id="admin-nav-quotes"
+            class="admin-nav-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 font-medium text-left">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span>Commercial Quotes</span>
+          </button>
+          <button type="button" onclick="switchAdminSection('drive')" id="admin-nav-drive"
+            class="admin-nav-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 font-medium text-left">
+            <i data-lucide="hard-drive" class="w-4 h-4"></i>
+            <span>Drive Data Hub</span>
+          </button>
+          <button type="button" onclick="switchAdminSection('landing')" id="admin-nav-landing"
+            class="admin-nav-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 font-medium text-left">
+            <i data-lucide="layout-template" class="w-4 h-4"></i>
+            <span>Landing Page</span>
+          </button>
+        </div>
+
+        <!-- Portal Switches -->
+        <div class="space-y-1 text-xs pt-4 border-t border-slate-100">
+          <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider px-2 block mb-2">CUSTOMER
+            PORTALS</span>
+          <button onclick="exitAdminView()"
+            class="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 font-medium text-left">
+            <i data-lucide="grid" class="w-4 h-4"></i>
+            <span>Public Showroom</span>
+          </button>
+          <button onclick="exitAdminView(); openVisualizerById('VOLVO-EX30-01');"
+            class="w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 font-medium text-left">
+            <i data-lucide="compass" class="w-4 h-4"></i>
+            <span>Studio Configurator</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- User Profile Card -->
+      <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 flex items-center space-x-3">
+        <div
+          class="w-9 h-9 rounded-full bg-brand-on-surface text-white flex items-center justify-center font-bold text-xs">
+          VD
+        </div>
+        <div class="flex-1 min-w-0">
+          <span class="text-xs font-bold text-brand-on-surface block truncate">Commercial Dir</span>
+          <span class="text-[10px] text-slate-400 block truncate">Stockholm Central Hub</span>
+        </div>
+        <button onclick="handleAdminLogout()" class="text-slate-400 hover:text-rose-600" title="Keluar">
+          <i data-lucide="log-out" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Content -->
+    <main class="flex-1 flex flex-col min-w-0 overflow-y-auto">
+      <!-- Top Workspace Bar -->
+      <header
+        class="bg-white border-b border-slate-200 sticky top-0 z-30 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <span class="font-bold text-sm text-brand-on-surface">Volvo Enterprise Sales Cloud</span>
+          <span class="text-slate-300">â€¢</span>
+          <span class="text-xs text-slate-500">Nordic Region</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <button onclick="openCarDrawer()"
+            class="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-brand-primary text-white text-xs font-semibold hover:bg-brand-primary-hover transition-colors">
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            <span>Tambah / Edit Unit Mobil</span>
+          </button>
+          <button onclick="exitAdminView()"
+            class="px-3 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors">
+            Showroom
+          </button>
+        </div>
+      </header>
+
+      <div class="max-w-6xl mx-auto w-full px-4 sm:px-8 py-6 space-y-6">
+        <!-- ===== SECTION: OVERVIEW & KPI ===== -->
+        <div id="admin-section-overview" class="space-y-6">
+
+        <!-- Header Banner & Priority Status (screen_3.jpg & screen.png) -->
+        <div class="bg-brand-on-surface text-white rounded-2xl p-6 sm:p-8 space-y-4 relative overflow-hidden shadow-lg">
+          <div class="flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center space-x-2">
+              <span class="w-2 h-2 rounded-full bg-brand-emerald"></span>
+              <span class="font-semibold uppercase tracking-wider text-slate-300">BATAM HUB PRIORITY HUB</span>
+            </div>
+            <span class="text-slate-300 font-mono">ðŸ“… Bulan Ini â€¢ Mei 2026</span>
+          </div>
+
+          <div>
+            <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-white">Executive Control Centre</h1>
+            <p class="text-xs sm:text-sm text-slate-300 mt-1">Ringkasan konversi portofolio elektrifikasi kepulauan Riau
+              & regional barat.</p>
+          </div>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <span
+              class="px-3 py-1.5 rounded-lg bg-white/10 text-xs font-semibold flex items-center space-x-2 border border-white/10">
+              <i data-lucide="zap" class="w-3.5 h-3.5 text-blue-400"></i>
+              <span>EV Share 72.8%</span>
+            </span>
+            <span
+              class="px-3 py-1.5 rounded-lg bg-white/10 text-xs font-semibold flex items-center space-x-2 border border-white/10">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i>
+              <span>SLA Respon &lt; 8 Mnt</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 4 Telemetry Metrics Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Metric 1: Prospek Aktif -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">PROSPEK AKTIF</span>
+              <div class="w-7 h-7 rounded-md bg-blue-50 text-brand-primary flex items-center justify-center">
+                <i data-lucide="users" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="flex items-baseline space-x-2">
+              <span id="stat-total-leads"
+                class="font-display font-bold text-3xl text-brand-on-surface font-mono">48</span>
+              <span class="text-xs font-bold text-brand-emerald">+18.4%</span>
+            </div>
+            <span class="text-[11px] text-slate-400 block font-medium">MoM Pipeline Growth</span>
+          </div>
+
+          <!-- Metric 2: Test Drive Queue -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">TEST DRIVE</span>
+              <div class="w-7 h-7 rounded-md bg-amber-50 text-brand-amber flex items-center justify-center">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="flex items-baseline space-x-2">
+              <span id="stat-pending-td" class="font-display font-bold text-3xl text-brand-amber font-mono">6</span>
+              <span class="text-xs text-slate-500">Unit</span>
+            </div>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-amber text-white inline-block">â— Perlu
+              Konfirmasi Segera</span>
+          </div>
+
+          <!-- Metric 3: Favorit Unit -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">FAVORIT UNIT</span>
+              <div class="w-7 h-7 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                <i data-lucide="star" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="flex items-baseline space-x-2">
+              <span class="font-display font-bold text-2xl text-brand-on-surface">EX30</span>
+              <span class="text-xs font-semibold text-brand-primary">54% Minat</span>
+            </div>
+            <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+              <div class="bg-brand-primary h-full w-[54%]"></div>
+            </div>
+          </div>
+
+          <!-- Metric 4: Pipeline Value -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">PIPELINE VALUE</span>
+              <div class="w-7 h-7 rounded-md bg-emerald-50 text-brand-emerald flex items-center justify-center">
+                <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <div class="flex items-baseline space-x-1">
+              <span class="font-display font-bold text-3xl text-brand-on-surface font-mono">4.6</span>
+              <span class="text-sm font-semibold text-slate-600">Miliar</span>
+            </div>
+            <span class="text-[11px] text-slate-400 block font-medium">8 Penawaran SPK Aktif</span>
+          </div>
+        </div>
+        </div><!-- /admin-section-overview -->
+
+        <!-- ===== SECTION: SALES PIPELINE ===== -->
+        <div id="admin-section-pipeline" class="hidden space-y-6">
+
+        <!-- Filter Bar & Search Container -->
+        <div
+          class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+          <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 sm:pb-0">
+            <button onclick="filterAdminLeads('all')" id="admin-tab-all"
+              class="admin-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-brand-primary text-white">Semua (<span
+                id="count-all">0</span>)</button>
+            <button onclick="filterAdminLeads('New')" id="admin-tab-new"
+              class="admin-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">Baru
+              (<span id="count-new">0</span>)</button>
+            <button onclick="filterAdminLeads('Test Drive Scheduled')" id="admin-tab-td"
+              class="admin-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">Test
+              Drive (<span id="count-td">0</span>)</button>
+            <button onclick="filterAdminLeads('Closed Deal')" id="admin-tab-closed"
+              class="admin-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">SPK /
+              Deal (<span id="count-deal">0</span>)</button>
+          </div>
+          <div class="relative w-full sm:w-64">
+            <i data-lucide="search" class="w-4 h-4 absolute left-3 top-2.5 text-slate-400"></i>
+            <input type="text" id="admin-search-input" onkeyup="handleAdminSearch()"
+              placeholder="Cari nama, WA, unit..."
+              class="w-full h-9 pl-9 pr-3 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-primary">
+          </div>
+        </div>
+
+        <!-- Leads Table (Desktop View) -->
+        <div class="hidden md:block bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+          <table class="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr
+                class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-bold tracking-wider text-[11px]">
+                <th class="py-3 px-4">Nama Prospek</th>
+                <th class="py-3 px-4">Komunikasi WhatsApp</th>
+                <th class="py-3 px-4">Unit Minat</th>
+                <th class="py-3 px-4">Jadwal & Format</th>
+                <th class="py-3 px-4">Status Prospek</th>
+                <th class="py-3 px-4 text-right">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="leads-table-body" class="divide-y divide-slate-100 font-medium">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Leads Stream Feed (Mobile View - Sesuai screen.png) -->
+        <div id="leads-mobile-stream" class="block md:hidden space-y-3">
+          <!-- Rendered by JS -->
+        </div>
+        </div><!-- /admin-section-pipeline -->
+
+        <!-- ===== SECTION: FLEET INVENTORY ===== -->
+        <div id="admin-section-inventory" class="hidden space-y-6">
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 class="font-display font-bold text-lg text-brand-on-surface">Fleet Inventory Management</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Kelola katalog unit Volvo, foto utama (Drive), dan brosur resmi.</p>
+              </div>
+              <button onclick="openCarDrawer()"
+                class="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-brand-primary text-white text-xs font-semibold hover:bg-brand-primary-hover transition-colors">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+                <span>Tambah Unit Baru</span>
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr
+                    class="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-bold tracking-wider text-[11px]">
+                    <th class="py-3 px-4">Unit</th>
+                    <th class="py-3 px-4">Kategori</th>
+                    <th class="py-3 px-4">Harga OTR</th>
+                    <th class="py-3 px-4">Baterai</th>
+                    <th class="py-3 px-4">Status</th>
+                    <th class="py-3 px-4 text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-inventory-body" class="divide-y divide-slate-100 font-medium">
+                  <tr>
+                    <td colspan="6" class="py-6 text-center text-slate-400">Memuat data unit...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SECTION: COMMERCIAL QUOTES ===== -->
+        <div id="admin-section-quotes" class="hidden space-y-6">
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div>
+              <h2 class="font-display font-bold text-lg text-brand-on-surface">Commercial Quotes &amp; SPK</h2>
+              <p class="text-xs text-slate-500 mt-0.5">Rekapitulasi penawaran berdasarkan status prospek pada pipeline.</p>
+            </div>
+            <div id="quotes-summary" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
+          </div>
+        </div>
+
+        <!-- ===== SECTION: DRIVE DATA HUB ===== -->
+        <div id="admin-section-drive" class="hidden space-y-6">
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 class="font-display font-bold text-lg text-brand-on-surface">Drive Data Hub</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Drive Induk <span class="font-semibold text-brand-primary">Volvo
+                    AutoHub Data</span> beserta subfolder fungsional.</p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <button onclick="loadDriveStructure()"
+                  class="px-3 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors">Muat
+                  Ulang</button>
+                <button onclick="backupLeadsToDrive()"
+                  class="px-3.5 py-2 rounded-lg bg-brand-primary text-white text-xs font-semibold hover:bg-brand-primary-hover transition-colors">Backup
+                  Prospek (CSV)</button>
+              </div>
+            </div>
+            <div id="drive-folder-list" class="space-y-2 text-xs">
+              <p class="text-slate-400">Muat struktur Drive untuk melihat folder.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SECTION: LANDING PAGE CONTENT ===== -->
+        <div id="admin-section-landing" class="hidden space-y-6">
+
+          <!-- Tampilan navigasi atas -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 class="font-display font-bold text-lg text-brand-on-surface">Tampilan Navigasi Atas</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Atur bagian mana yang muncul di paling atas halaman publik.</p>
+              </div>
+              <button type="button" onclick="saveNavVisibility()"
+                class="px-3.5 py-2 rounded-lg bg-brand-primary text-white text-xs font-semibold hover:bg-brand-primary-hover transition-colors">Simpan
+                Tampilan</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="block">
+                <span class="block text-xs font-semibold text-brand-on-surface mb-1">Strip pengumuman (paling atas)</span>
+                <select id="announce-enabled" onchange="updateNavPreview()"
+                  class="w-full h-9 px-3 rounded-lg border border-slate-300 text-xs">
+                  <option value="true">Tampilkan</option>
+                  <option value="false">Sembunyikan</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="block text-xs font-semibold text-brand-on-surface mb-1">Navigasi utama (logo &amp; menu)</span>
+                <select id="nav-enabled" onchange="updateNavPreview()"
+                  class="w-full h-9 px-3 rounded-lg border border-slate-300 text-xs">
+                  <option value="true">Tampilkan</option>
+                  <option value="false">Sembunyikan</option>
+                </select>
+              </label>
+            </div>
+            <p id="nav-visibility-note" class="text-[11px] text-slate-500"></p>
+          </div>
+
+          <!-- Menu navigasi atas (tambah / kurangi / muncul-tidak) -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 class="font-display font-bold text-lg text-brand-on-surface">Menu Navigasi Atas</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Atur label, aksi, dan apakah setiap menu muncul di navigasi
+                  atas. Bisa ditambah atau dikurangi sesuai kebutuhan.</p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <button type="button" onclick="addNavItemRow()"
+                  class="inline-flex items-center space-x-1.5 px-3 py-2 rounded-lg border border-brand-primary text-brand-primary text-xs font-semibold hover:bg-blue-50 transition-colors">
+                  <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                  <span>Tambah Menu</span>
+                </button>
+                <button type="button" onclick="saveNavItems()"
+                  class="px-3.5 py-2 rounded-lg bg-brand-primary text-white text-xs font-semibold hover:bg-brand-primary-hover transition-colors">Simpan
+                  Menu</button>
+              </div>
+            </div>
+
+            <div id="nav-item-status" class="hidden text-xs rounded-lg px-3 py-2"></div>
+
+            <div
+              class="hidden sm:grid grid-cols-12 gap-2 px-2 text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+              <span class="col-span-4">Label menu</span>
+              <span class="col-span-3">Aksi</span>
+              <span class="col-span-3">Target / URL</span>
+              <span class="col-span-2 text-center">Tampil</span>
+            </div>
+
+            <div id="nav-items-list" class="space-y-2"></div>
+
+            <p class="text-[11px] text-slate-500">Menu "Executive CRM Portal / Login Admin" selalu tampil di ujung
+              kanan karena dipakai untuk masuk ke panel admin. Labelnya diatur pada grup "Brand &amp; Navigasi".</p>
+          </div>
+
+          <!-- Logo / gambar nama brand -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 class="font-display font-bold text-lg text-brand-on-surface">Logo / Gambar Nama Brand</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Unggah berkas logo (PNG, JPG, atau WebP â€” maks 2 MB). Bila logo
+                  diisi, teks nama brand di navigasi otomatis disembunyikan.</p>
+              </div>
+              <button type="button" onclick="saveBrandLogo()"
+                class="px-3.5 py-2 rounded-lg bg-brand-primary text-white text-xs font-semibold hover:bg-brand-primary-hover transition-colors">Simpan
+                Logo</button>
+            </div>
+
+            <div id="brand-logo-status" class="hidden text-xs rounded-lg px-3 py-2"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <div class="space-y-3">
+                <label class="block">
+                  <span class="block text-xs font-semibold text-brand-on-surface mb-1">URL logo (opsional)</span>
+                  <input type="text" id="brand-logo-url" placeholder="https://..."
+                    class="w-full h-9 px-3 rounded-lg border border-slate-300 text-xs">
+                </label>
+                <div class="flex flex-wrap items-center gap-2">
+                  <input type="file" id="brand-logo-file" accept="image/png,image/jpeg,image/webp" class="hidden"
+                    onchange="handleBrandLogoUpload(this)">
+                  <label for="brand-logo-file"
+                    class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-brand-primary text-brand-primary font-semibold cursor-pointer hover:bg-blue-50 text-xs">
+                    <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+                    <span>Unggah Logo (maks 2 MB)</span>
+                  </label>
+                  <button type="button" onclick="clearBrandLogo()"
+                    class="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-100 transition-colors">Hapus
+                    Logo</button>
+                  <span id="brand-logo-upload-status" class="text-[11px] text-slate-500">Belum ada berkas dipilih</span>
+                </div>
+                <label class="block">
+                  <span class="block text-xs font-semibold text-brand-on-surface mb-1">Tinggi tampilan logo</span>
+                  <select id="brand-logo-height" onchange="updateBrandLogoPreview()"
+                    class="w-full h-9 px-3 rounded-lg border border-slate-300 text-xs">
+                    <option value="h-7 md:h-8">Kecil</option>
+                    <option value="h-9 md:h-11">Sedang</option>
+                    <option value="h-12 md:h-14">Besar</option>
+                  </select>
+                </label>
+              </div>
+              <div class="space-y-2">
+                <span class="block text-xs font-semibold text-brand-on-surface">Pratinjau</span>
+                <div class="flex items-center justify-center h-24 rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <img id="brand-logo-preview" alt="Pratinjau logo" class="hidden max-h-full w-auto object-contain">
+                  <span id="brand-logo-empty" class="text-[11px] text-slate-400 text-center">Belum ada logo â€” teks nama
+                    brand yang ditampilkan.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video sinematik -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 class="font-display font-bold text-lg text-brand-on-surface">Video Sinematik (di bawah navigasi)</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Mendukung tautan YouTube/Vimeo, berkas MP4 langsung, atau unggah MP4 ke Drive.
+                  Video diputar otomatis tanpa suara dan berulang.</p>
+              </div>
+              <button type="button" onclick="saveLandingVideo()"
+                class="px-3.5 py-2 rounded-lg bg-brand-primary text-white text-xs font-semibold hover:bg-brand-primary-hover transition-colors">Simpan
+                Video</button>
+            </div>
+
+            <div id="video-status" class="hidden text-xs rounded-lg px-3 py-2"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <div class="space-y-3">
+                <label class="block">
+                  <span class="block text-xs font-semibold text-brand-on-surface mb-1">Tampilkan bagian video</span>
+                  <select id="video-enabled" class="w-full h-9 px-3 rounded-lg border border-slate-300 text-xs">
+                    <option value="true">Tampilkan</option>
+                    <option value="false">Sembunyikan</option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span class="block text-xs font-semibold text-brand-on-surface mb-1">Sumber video</span>
+                  <select id="video-source" onchange="onVideoSourceChange()"
+                    class="w-full h-9 px-3 rounded-lg border border-slate-300 text-xs">
+                    <option value="youtube">YouTube / Vimeo (tempel tautan)</option>
+                    <option value="direct">MP4 tautan langsung / CDN</option>
+                    <option value="upload">MP4 hasil unggah ke Drive</option>
+                  </select>
+                </label>
+                <label class="block" id="video-url-wrap">
+                  <span class="block text-xs font-semibold text-brand-on-surface mb-1" id="video-url-label">Tautan YouTube /
+                    Vimeo</span>
+                  <input type="text" id="video-url" placeholder="https://www.youtube.com/watch?v=..."
+                    class="w-full h-9 px-3 rounded-lg border border-slate-300 text-xs">
+                </label>
+                <div class="flex flex-wrap items-center gap-2">
+                  <input type="file" id="video-file" accept="video/mp4,video/webm" class="hidden"
+                    onchange="handleVideoUpload(this)">
+                  <label for="video-file"
+                    class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-brand-primary text-brand-primary font-semibold cursor-pointer hover:bg-blue-50 text-xs">
+                    <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+                    <span>Unggah MP4 (maks 15 MB)</span>
+                  </label>
+                  <span id="video-upload-status" class="text-[11px] text-slate-500">Belum ada berkas dipilih</span>
+                </div>
+                <label class="block">
+                  <span class="block text-xs font-semibold text-brand-on-surface mb-1">Gambar poster (URL, opsional)</span>
+                  <input type="text" id="video-poster" placeholder="https://..."
+                    class="w-full h-9 px-3 rounded-lg border border-slate-300 text-xs">
+                </label>
+              </div>
+
+              <div class="space-y-2">
+                <span class="block text-xs font-semibold text-brand-on-surface">Pratinjau</span>
+                <div id="video-preview"
+                  class="relative w-full aspect-video rounded-xl overflow-hidden bg-[#0b1c30] border border-slate-200">
+                  <div id="video-preview-media" class="absolute inset-0"></div>
+                  <div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">
+                    <span id="video-preview-empty" class="text-[11px] text-slate-300 text-center">Belum ada video. Bagian
+                      ini disembunyikan dari pengunjung sampai tautan atau berkas ditambahkan.</span>
+                  </div>
+                </div>
+                <p class="text-[11px] text-slate-500">Catatan: video yang diunggah ke Drive bergantung pada izin
+                  "Anyone with the link". Untuk hasil paling andal, gunakan tautan YouTube.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Konten teks -->
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 class="font-display font-bold text-lg text-brand-on-surface">Konten Teks Landing Page</h2>
+                <p class="text-xs text-slate-500 mt-0.5">Seluruh teks halaman publik diatur dari sini. Perubahan langsung
+                  terlihat setelah disimpan.</p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <button type="button" onclick="reloadSiteConfig()"
+                  class="px-3 py-2 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors">Muat
+                  Ulang</button>
+                <button type="button" onclick="handleSaveSiteConfig()" id="btn-save-site"
+                  class="px-3.5 py-2 rounded-lg bg-brand-primary text-white text-xs font-semibold hover:bg-brand-primary-hover transition-colors">Simpan
+                  Konten</button>
+              </div>
+            </div>
+            <div id="site-config-form" class="space-y-5"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 5. ADMIN LOGIN MODAL                      -->
+  <!-- ========================================== -->
+  <div id="admin-login-modal"
+    class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl w-full max-w-sm p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="text-center space-y-1">
+        <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-primary flex items-center justify-center mx-auto mb-2">
+          <i data-lucide="shield-check" class="w-6 h-6"></i>
+        </div>
+        <h3 class="font-display font-bold text-lg text-brand-on-surface">Autentikasi Executive CRM</h3>
+        <p class="text-xs text-slate-500">Masukkan kata sandi administrator untuk mengelola prospek dan inventaris unit.
+        </p>
+      </div>
+
+      <form onsubmit="handleAdminLogin(event)" class="space-y-3">
+        <div>
+          <label for="admin-password" class="block text-xs font-semibold text-brand-on-surface mb-1">Kata Sandi</label>
+          <input type="password" id="admin-password" required placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+            class="w-full h-10 px-3 rounded-lg border border-slate-300 text-xs focus:outline-none focus:ring-2 focus:ring-brand-primary">
+        </div>
+        <button type="submit" id="btn-admin-login"
+          class="w-full h-10 bg-brand-on-surface hover:bg-slate-800 text-white font-semibold text-xs rounded-lg transition-all shadow-md">
+          Verifikasi & Masuk
+        </button>
+        <button type="button" onclick="closeAdminLoginModal()"
+          class="w-full text-xs text-slate-500 hover:text-slate-800 py-1">
+          Batal
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- 6. ADMIN ADD/EDIT CAR DRAWER (screen_3.jpg)-->
+  <!-- ========================================== -->
+  <div id="car-drawer"
+    class="fixed inset-y-0 right-0 z-50 hidden w-full sm:max-w-2xl bg-white shadow-2xl border-l border-slate-200 flex flex-col">
+    <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+      <div>
+        <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">INVENTORY
+          MANAGEMENT</span>
+        <h3 class="font-display font-bold text-base text-brand-on-surface">Tambah / Edit Unit Kendaraan Volvo</h3>
+      </div>
+      <div class="flex items-center space-x-2">
+        <button onclick="closeCarDrawer()"
+          class="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-600 hover:bg-slate-100">Batal</button>
+        <button form="car-form" type="submit" id="btn-save-car"
+          class="px-3.5 py-1.5 rounded-lg bg-brand-primary hover:bg-brand-primary-hover text-white text-xs font-semibold">
+          Simpan Perubahan
+        </button>
+      </div>
+    </div>
+
+    <form id="car-form" onsubmit="handleSaveCar(event)" class="p-6 overflow-y-auto flex-1 space-y-4 text-xs">
+      <input type="hidden" id="drawer-car-id">
+
+      <!-- Section 1: Model & Klasifikasi -->
+      <div class="space-y-3">
+        <span class="text-xs font-bold text-brand-on-surface flex items-center space-x-1.5">
+          <i data-lucide="info" class="w-4 h-4 text-brand-primary"></i>
+          <span>INFORMASI MODEL & KLASIFIKASI</span>
+        </span>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold mb-1 text-slate-700">Model Kendaraan</label>
+            <input type="text" id="drawer-model" required placeholder="Volvo EX30"
+              class="w-full h-9 px-3 rounded-lg border border-slate-300">
+          </div>
+          <div>
+            <label class="block font-semibold mb-1 text-slate-700">Trim Level</label>
+            <input type="text" id="drawer-trim" required placeholder="Ultra Twin Motor Performance"
+              class="w-full h-9 px-3 rounded-lg border border-slate-300">
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold mb-1 text-slate-700">Powertrain Kategori</label>
+          <select id="drawer-category" class="w-full h-9 px-3 rounded-lg border border-slate-300 bg-white">
+            <option value="Pure Electric">Pure Electric (100% EV)</option>
+            <option value="Plug-in Hybrid">Plug-in Hybrid (PHEV)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-semibold mb-1 text-slate-700">Harga On The Road (Batam/Kepri)</label>
+          <input type="text" id="drawer-price" required placeholder="Rp 1.160.000.000"
+            class="w-full h-9 px-3 rounded-lg border border-slate-300 font-mono">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1 text-slate-700">Status Publikasi</label>
+          <select id="drawer-status" class="w-full h-9 px-3 rounded-lg border border-slate-300 bg-white">
+            <option value="Active">Active - tampil di showroom publik</option>
+            <option value="Draft">Draft - disembunyikan sementara</option>
+            <option value="Archived">Archived - unit lama / sudah terjual</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Section 2: Performa & Spesifikasi Teknis -->
+      <div class="space-y-3 pt-3 border-t border-slate-100">
+        <span class="text-xs font-bold text-brand-on-surface flex items-center space-x-1.5">
+          <i data-lucide="activity" class="w-4 h-4 text-brand-primary"></i>
+          <span>PERFORMA & SPESIFIKASI TEKNIS</span>
+        </span>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold mb-1 text-slate-700">Akselerasi 0-100 KM/H</label>
+            <input type="text" id="drawer-acc" placeholder="3.6 detik"
+              class="w-full h-9 px-3 rounded-lg border border-slate-300 font-mono">
+          </div>
+          <div>
+            <label class="block font-semibold mb-1 text-slate-700">Kapasitas Baterai</label>
+            <input type="text" id="drawer-battery" placeholder="69 kWh (NMC)"
+              class="w-full h-9 px-3 rounded-lg border border-slate-300 font-mono">
+          </div>
+          <div>
+            <label class="block font-semibold mb-1 text-slate-700">Jarak Tempuh (WLTP)</label>
+            <input type="text" id="drawer-range" placeholder="476 km"
+              class="w-full h-9 px-3 rounded-lg border border-slate-300 font-mono">
+          </div>
+          <div>
+            <label class="block font-semibold mb-1 text-slate-700">Output Tenaga</label>
+            <input type="text" id="drawer-power" placeholder="428 hp / 543 Nm"
+              class="w-full h-9 px-3 rounded-lg border border-slate-300 font-mono">
+          </div>
+          <div>
+            <label class="block font-semibold mb-1 text-slate-700">Kecepatan Charging</label>
+            <input type="text" id="drawer-charging" placeholder="26 mnt (10-80%)"
+              class="w-full h-9 px-3 rounded-lg border border-slate-300 font-mono">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Aset Visual & Media -->
+      <div class="space-y-3 pt-3 border-t border-slate-100">
+        <span class="text-xs font-bold text-brand-on-surface flex items-center space-x-1.5">
+          <i data-lucide="image" class="w-4 h-4 text-brand-primary"></i>
+          <span>ASET VISUAL & BROSUR</span>
+        </span>
+        <div>
+          <label class="block font-semibold mb-1 text-slate-700">URL Foto Utama Unit (High Res)</label>
+          <input type="text" id="drawer-img" placeholder="https://... atau unggah foto ke Drive"
+            class="w-full h-9 px-3 rounded-lg border border-slate-300">
+          <div class="mt-2 flex items-center space-x-2">
+            <input type="file" id="drawer-img-file" accept="image/*" onchange="handleCarPhotoSelected(this)"
+              class="hidden">
+            <label for="drawer-img-file"
+              class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-brand-primary text-brand-primary font-semibold cursor-pointer hover:bg-blue-50">
+              <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+              <span>Unggah Foto ke Drive</span>
+            </label>
+            <span id="drawer-img-status" class="text-[11px] text-slate-500">Belum ada file dipilih</span>
+          </div>
+          <img id="drawer-img-preview" alt="Pratinjau foto unit"
+            class="hidden mt-2 w-full h-32 object-cover rounded-lg border border-slate-200">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1 text-slate-700">Embed Video Showcase YouTube</label>
+          <input type="url" id="drawer-video" placeholder="https://youtube.com/..."
+            class="w-full h-9 px-3 rounded-lg border border-slate-300">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1 text-slate-700">Katalog PDF Resmi</label>
+          <input type="text" id="drawer-brochure" placeholder="https://... atau unggah PDF ke Drive"
+            class="w-full h-9 px-3 rounded-lg border border-slate-300">
+          <div class="mt-2 flex items-center space-x-2">
+            <input type="file" id="drawer-brochure-file" accept="application/pdf"
+              onchange="handleBrochureSelected(this)" class="hidden">
+            <label for="drawer-brochure-file"
+              class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-300 text-slate-700 font-semibold cursor-pointer hover:bg-slate-50">
+              <i data-lucide="file-up" class="w-3.5 h-3.5"></i>
+              <span>Unggah PDF ke Drive</span>
+            </label>
+            <span id="drawer-brochure-status" class="text-[11px] text-slate-500">Belum ada file dipilih</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Warna Eksterior Dinamis -->
+      <div class="space-y-3 pt-3 border-t border-slate-100">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-brand-on-surface flex items-center space-x-1.5">
+            <i data-lucide="palette" class="w-4 h-4 text-brand-primary"></i>
+            <span>WARNA EKSTERIOR</span>
+          </span>
+          <button type="button" onclick="addColorRow()"
+            class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg border border-slate-200 text-[11px] font-semibold text-slate-700 hover:bg-slate-50">
+            <i data-lucide="plus" class="w-3 h-3"></i>
+            <span>Tambah Warna</span>
+          </button>
+        </div>
+        <p class="text-[11px] text-slate-500">Nama warna, kode hex (swatch), dan foto unit dengan warna tersebut. Isi URL foto atau klik tombol unggah (maks 3 MB per gambar).</p>
+        <div id="drawer-colors-list" class="space-y-2"></div>
+      </div>
+
+      <!-- Section 5: Galeri Interior Dinamis -->
+      <div class="space-y-3 pt-3 border-t border-slate-100">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-brand-on-surface flex items-center space-x-1.5">
+            <i data-lucide="sofa" class="w-4 h-4 text-brand-primary"></i>
+            <span>GALERI INTERIOR</span>
+          </span>
+          <button type="button" onclick="addInteriorRow()"
+            class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg border border-slate-200 text-[11px] font-semibold text-slate-700 hover:bg-slate-50">
+            <i data-lucide="plus" class="w-3 h-3"></i>
+            <span>Tambah Interior</span>
+          </button>
+        </div>
+        <p class="text-[11px] text-slate-500">Judul, deskripsi singkat, dan foto kabin / fitur interior. Isi URL foto atau klik tombol unggah (maks 3 MB per gambar).</p>
+        <div id="drawer-interiors-list" class="space-y-2"></div>
+      </div>
+
+      <!-- Section 6: Fitur Kunci Dinamis -->
+      <div class="space-y-3 pt-3 border-t border-slate-100">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-brand-on-surface flex items-center space-x-1.5">
+            <i data-lucide="sparkles" class="w-4 h-4 text-brand-primary"></i>
+            <span>FITUR KUNCI &amp; TEKNOLOGI</span>
+          </span>
+          <button type="button" onclick="addFeatureRow()"
+            class="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg border border-slate-200 text-[11px] font-semibold text-slate-700 hover:bg-slate-50">
+            <i data-lucide="plus" class="w-3 h-3"></i>
+            <span>Tambah Fitur</span>
+          </button>
+        </div>
+        <p class="text-[11px] text-slate-500">Daftar keunggulan yang tampil di tab Fitur pada Studio Visualizer.</p>
+        <div id="drawer-features-list" class="space-y-2"></div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Toast Notification Pop-up -->
+  <div id="toast-notification"
+    class="fixed bottom-5 right-5 z-50 hidden max-w-sm px-4 py-3 rounded-xl shadow-xl bg-brand-on-surface text-white text-xs flex items-center space-x-3 transition-all transform translate-y-2">
+    <div id="toast-icon" class="w-5 h-5 flex items-center justify-center text-brand-emerald">
+      <i data-lucide="check-circle" class="w-5 h-5"></i>
+    </div>
+    <span id="toast-message" class="flex-1 font-medium">Permintaan berhasil diproses.</span>
+  </div>
+
+    <!-- Application Scripts -->
+  <script src="config.js"></script>
+  <script src="gas-bridge.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
